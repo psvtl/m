@@ -42,7 +42,7 @@ def test_hypothesis(sample_1, sample_2, alpha):
         st.markdown('Вывод: **гипотеза отвергается в пользу альтернативы**')
 
 
-df = pd.read_excel('Raw\\m_tech\\stats.xlsx',header=0)
+df = pd.read_excel('stats.xlsx',header=0)
 csv = convert_df(df)
 st.download_button("Press to Download", csv, "file.csv", "text/csv", key='download-csv')
 
