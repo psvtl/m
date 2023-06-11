@@ -16,9 +16,7 @@ def test_hypothesis(sample_1, sample_2, alpha):
         return
 
     mean_1, mean_2 = np.mean(sample_1), np.mean(sample_2)
-    ddof_1 = 1 if n_1 > 1 else 0
-    ddof_2 = 1 if n_2 > 1 else 0
-    var_1, var_2 = np.var(sample_1, ddof=ddof_1), np.var(sample_2, ddof=ddof_2)
+    var_1, var_2 = np.var(sample_1, ddof=ddof_1), np.var(sample_2, ddof=1)
 
     var = ( ((n_1-1)*var_1) + ((n_2-1)*var_2 ) ) / (n_1+n_2-2)
     std_error = np.sqrt(var * (1.0 / n_1 + 1.0 / n_2))
